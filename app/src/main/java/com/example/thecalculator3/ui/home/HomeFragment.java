@@ -33,9 +33,11 @@ public class HomeFragment extends Fragment implements TextWatcher {
     TextView tvJPY;
     TextView tvUSD;
 
+    boolean flg = true;
+    String inputText = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+                             final ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -58,17 +60,23 @@ public class HomeFragment extends Fragment implements TextWatcher {
         }
 
 
-
+        final HomeFragment homeflagment = this;
         Button test = root.findViewById(R.id.testBtn);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    new GetRating(homeflagment).execute(new URL(url1));
+                }catch (Exception e){
+
+                }
                 Log.d("■","444");
-                textView.setText("aaa");
             }
         });
 
-        tvJPY.addTextChangedListener(this);
+            tvJPY.addTextChangedListener(this);
+            //tvUSD.addTextChangedListener(this);
+
 
         return root;
     }
@@ -91,20 +99,33 @@ public class HomeFragment extends Fragment implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable editable) {
+        inputText = editable.toString();
+        Log.d("●",inputText);
         try {
-            if (isNumMatch(editable.toString()) && editable.length() != 0) {
-                BigDecimal bd1 = new BigDecimal(editable.toString());
-                BigDecimal bd2 = new BigDecimal(rate);
-                BigDecimal bd3 = bd1.multiply(bd2);
-                tvUSD.setText(bd3.toString());
+            if (editable.length() != 0) {
+                if(flg) {
+                    BigDecimal bd1 = new BigDecimal(editable.toString());
+                    BigDecimal bd2 = new BigDecimal(rate);
+                    BigDecimal bd3 = bd1.multiply(bd2);
+                    tvUSD.setText(bd3.toString());
+                }else{
+                    BigDecimal bd1 = new BigDecimal(editable.toString());
+                    BigDecimal bd2 = new BigDecimal(rate);
+                    BigDecimal bd3 = bd1.divide(bd2,3);
+                    tvUSD.setText(bd3.toString());
+                }
             } else {
                 System.out.println("なんぞかんぞのエラー");
             }
         }catch (NumberFormatException e) {
             System.err.println("NumberFormatException : " + e );
         }
+
     }
 
+    public void inputUSDJPY(boolean flg){
+
+    }
     public boolean isNumMatch(String number) {
         java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("^[0-9]*$");
         java.util.regex.Matcher matcher = pattern.matcher(number);

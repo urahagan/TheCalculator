@@ -65,5 +65,6 @@ final class GetRating extends AsyncTask<URL, Void, String> {
         tv.setText(s);
         tv = fragment.getActivity().findViewById(R.id.rateUSD);
         tv.setText(s);
+        Log.d("■",s);
     }
 }
