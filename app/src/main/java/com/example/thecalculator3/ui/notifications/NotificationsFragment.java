@@ -34,11 +34,6 @@ public class NotificationsFragment extends Fragment implements TextWatcher  {
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
 
-        tvBin = root.findViewById(R.id.tvBin);
-        tvOct = root.findViewById(R.id.tvOct);
-        tvDec = root.findViewById(R.id.tvDec);
-        tvHex = root.findViewById(R.id.tvHex);
-
         tvDec.addTextChangedListener(this);
 
         return root;
@@ -56,16 +51,6 @@ public class NotificationsFragment extends Fragment implements TextWatcher  {
 
     @Override
     public void afterTextChanged(Editable editable) {
-        try {
-            if (editable.length() != 0){
-                int num = Integer.parseInt(editable.toString());
-                String Dec = Integer.toBinaryString(num);
-                tvBin.setText(Dec);
-            } else {
-                System.out.println("なんぞかんぞのエラー");
-            }
-        }catch (NumberFormatException e) {
-            System.err.println("NumberFormatException : " + e );
-        }
+
     }
 }
