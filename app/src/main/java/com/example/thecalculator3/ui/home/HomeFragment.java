@@ -42,8 +42,8 @@ public class HomeFragment extends Fragment implements TextWatcher {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        tvJPY = root.findViewById(R.id.rateJPY);
-        tvUSD = root.findViewById(R.id.rateUSD);
+        tvJPY = root.findViewById(R.id.tvFrom);
+        tvUSD = root.findViewById(R.id.tvTo);
 
         textView.setText("レート取得中....");
         if(rate.equals("")){
@@ -60,22 +60,8 @@ public class HomeFragment extends Fragment implements TextWatcher {
         }
 
 
-        final HomeFragment homeflagment = this;
-        Button test = root.findViewById(R.id.testBtn);
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    new GetRating(homeflagment).execute(new URL(url1));
-                }catch (Exception e){
-
-                }
-                Log.d("■","444");
-            }
-        });
-
-            tvJPY.addTextChangedListener(this);
-            //tvUSD.addTextChangedListener(this);
+        tvJPY.addTextChangedListener(this);
+        //tvUSD.addTextChangedListener(this);
 
 
         return root;

@@ -1,7 +1,5 @@
 package com.example.thecalculator3.ui.home;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -41,7 +39,7 @@ final class GetRating extends AsyncTask<URL, Void, String> {
                 System.err.println("正常に接続できません statusCode:" + statusCode);
                 return null;
             }
-            Document doc = Jsoup.connect(url1).get();
+            Document doc = Jsoup.connect(url1).ignoreContentType(true).get();
             Elements elm = doc.select("dd.priceFin");
             Element elm2 = elm.get(0);
             String title = elm2.text();
@@ -63,7 +61,7 @@ final class GetRating extends AsyncTask<URL, Void, String> {
         fragment.setRate(s);
         TextView tv = fragment.getActivity().findViewById(R.id.text_home);
         tv.setText(s);
-        tv = fragment.getActivity().findViewById(R.id.rateUSD);
+        tv = fragment.getActivity().findViewById(R.id.tvTo);
         tv.setText(s);
         Log.d("■",s);
     }
