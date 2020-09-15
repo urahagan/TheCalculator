@@ -28,7 +28,7 @@ public class DashboardFragment extends Fragment implements TextWatcher {
 
     RadioGroup rg;
     RadioButton rbBin,rbOct,rbDec,rbHex;
-    int radioFlag = 0;
+    int radioFlag = 2;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
