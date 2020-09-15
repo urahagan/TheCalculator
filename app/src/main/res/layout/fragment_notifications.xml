@@ -20,58 +20,155 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
+        app:layout_constraintVertical_bias="0.064" />
 
-    <EditText
-        android:id="@+id/textByte"
-        android:layout_width="140dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="number"
+    <TextView
+        android:id="@+id/editByte"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintHorizontal_bias="0.651"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
+        app:layout_constraintVertical_bias="0.357" />
 
-    <EditText
+
+    <TextView
         android:id="@+id/editKilo"
-        android:layout_width="140dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="number"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintHorizontal_bias="0.651"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.415" />
 
-    <EditText
-        android:id="@+id/editMega"
-        android:layout_width="140dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.517" />
 
-    <EditText
+    <TextView
         android:id="@+id/editGiga"
-        android:layout_width="140dp"
-        android:layout_height="53dp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <TextView
+        android:id="@+id/editMega"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
+
+
+    <TextView
+        android:id="@+id/textByte"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="バイト(Byte)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <TextView
+        android:id="@+id/textKilo"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="キロ(Kilo)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
+
+    <TextView
+        android:id="@+id/textGiga"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="ギガ(Giga)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <TextView
+        android:id="@+id/textMega"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="メガ(Mega)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <EditText
+        android:id="@+id/inputValueCapa"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
         android:ems="10"
+        android:hint="0"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.679" />
+        app:layout_constraintVertical_bias="0.278" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="294dp"
+        android:layout_height="34dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215">
+
+        <RadioButton
+            android:id="@+id/rbByte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Byte" />
+
+        <RadioButton
+            android:id="@+id/rbKilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kilo" />
+
+        <RadioButton
+            android:id="@+id/rbGiga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giga" />
+
+        <RadioButton
+            android:id="@+id/rbMega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mega" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
